@@ -1,0 +1,70 @@
+.navbar {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navLink {
+  position: relative; /* Add this */
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #00ff48;
+  transition: width 0.3s ease;
+  transform: translateX(-50%); /* Add this */
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.wishlistButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  gap: 10px;
+}
+
+.wishlistIcon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.wishlistButton:hover {
+  transform: scale(1.1);
+}
+
+.wishlistButton:hover .wishlistIcon {
+  color: #ff3b30;
+}
