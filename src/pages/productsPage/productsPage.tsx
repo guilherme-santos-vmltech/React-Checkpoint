@@ -23,6 +23,7 @@ const { products, loading, error, toggleWishlist } = useProducts(wishlistUpdate)
 const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
 usePreloadImage("https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg");
+usePreloadImage("https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg");
 
 if (loading) return <LoadingDots />;
 if (error) return <div className={styles.error}>{error}</div>;

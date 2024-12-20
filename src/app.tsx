@@ -5,6 +5,8 @@ import ProductsPage from "./pages/productsPage/productsPage.tsx";
 import Layout from "./components/layout/layout.tsx";
 import { WishlistProvider } from "./context/wishlistContext/wishlistContext.tsx";
 import { CartProvider } from './context/cartContext/cartContext.tsx';
+import './styles/global.css';
+
 
 
 function App() {

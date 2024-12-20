@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./navbar.module.css";
 import WishlistModal from "../wishlistModal/wishlist.tsx";
 import { useCart } from "../../context/cartContext/cartContext.tsx";
@@ -12,12 +12,11 @@ const Navbar: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
 
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <>
       <nav className={styles.navbar}>
-        <Link to="/" className={styles.logo}>
-          Your Logo
-        </Link>
         <ul className={styles.navLinks}>
           <li>
             <Link to="/" className={styles.navLink}>
@@ -29,26 +28,36 @@ const Navbar: React.FC = () => {
               Products
             </Link>
           </li>
-          <li>
-            <button
-              className={styles.wishlistButton}
-              onClick={() => setIsWishlistOpen(true)}
-              aria-label="Open Wishlist"
-            >
-              Whishlist
-              <FontAwesomeIcon icon={faHeart} className={styles.wishlistIcon} />
-            </button>
-            <button onClick={() => setIsCartOpen(true)}>
-              Cart ({cartItems.length})
-            </button>
-          </li>
         </ul>
+
+        <div className={styles.iconButtons}>
+          <button
+            className={styles.wishlistButton}
+            onClick={() => setIsWishlistOpen(true)}
+            aria-label="Open Wishlist"
+          >
+            <FontAwesomeIcon icon={faHeart} className={styles.wishlistIcon} />
+          </button>
+
+          <button
+            className={styles.cartButton}
+            onClick={() => setIsCartOpen(true)}
+            aria-label="Open Cart"
+          >
+            <div className={styles.cartIconContainer}>
+              <FontAwesomeIcon
+                icon={faShoppingCart}
+                className={styles.cartIcon}
+              />
+              {totalItems > 0 && (
+                <span className={styles.cartBadge}>{totalItems}</span>
+              )}
+            </div>
+          </button>
+        </div>
       </nav>
 
-      <CartModal 
-      isOpen={isCartOpen}
-      onClose={() => setIsCartOpen(false)}
-    />
+      <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
       <WishlistModal
         isOpen={isWishlistOpen}

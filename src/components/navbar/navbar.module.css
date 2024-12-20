@@ -7,11 +7,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
+
+
+.iconButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navLinks {
@@ -19,10 +20,12 @@
   align-items: center;
   list-style: none;
   gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .navLink {
-  position: relative; /* Add this */
+  position: relative;
   text-decoration: none;
   color: #333;
   padding: 0.5rem;
@@ -42,6 +45,60 @@
 
 .navLink:hover::after {
   width: 100%;
+}
+
+.cartButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.cartButton:hover {
+  color: #4299e1;
+}
+
+.cartIconContainer {
+  position: relative;
+  display: inline-flex;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff3b30;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  min-width: 18px;
+  height: 18px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .wishlistButton {
