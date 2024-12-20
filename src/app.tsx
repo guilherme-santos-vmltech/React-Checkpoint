@@ -4,19 +4,23 @@ import Home from "./pages/homePage/homePage.tsx";
 import ProductsPage from "./pages/productsPage/productsPage.tsx";
 import Layout from "./components/layout/layout.tsx";
 import { WishlistProvider } from "./context/wishlistContext/wishlistContext.tsx";
+import { CartProvider } from './context/cartContext/cartContext.tsx';
+
 
 function App() {
   return (
-    <WishlistProvider>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductsPage />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </WishlistProvider>
+    <CartProvider>
+      <WishlistProvider>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<ProductsPage />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </WishlistProvider>
+    </CartProvider>
   );
 }
 
