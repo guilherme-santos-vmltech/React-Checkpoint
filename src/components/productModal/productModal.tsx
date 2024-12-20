@@ -1,58 +1,60 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import styles from './productModal.module.css';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import styles from "./productModal.module.css";
 
 interface Product {
-id: number;
-title: string;
-price: number;
-description: string;
-image: string;
-category: string;
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  image: string;
+  category: string;
 }
 
 interface ProductModalProps {
-product: Product | null;
-onClose: () => void;
+  product: Product | null;
+  onClose: () => void;
+  onToggleWishlist: (e: React.MouseEvent, productId: number) => void;
 }
+const ProductModal: React.FC<ProductModalProps> = ({
+  product,
+  onClose,
+  onToggleWishlist,
+}) => {
+  if (!product) return null;
 
-const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
-if (!product) return null;
+  return (
+    <div className={styles.modalContainer}>
+      <div className={styles.modalOverlay} onClick={onClose} />
+      <div className={styles.modalContent}>
+        <button className={styles.modalClose} onClick={onClose}>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
 
-return (
-  <>
-    <div className={styles.overlay} onClick={onClose} />
-    <div className={styles.modal}>
-      <button className={styles.closeButton} onClick={onClose}>
-        <FontAwesomeIcon icon={faTimes} />
-      </button>
-      
-      <div className={styles.content}>
-        <div className={styles.imageContainer}>
-          <img 
-            src={product.image} 
-            alt={product.title} 
-            className={styles.image}
-          />
-        </div>
-        
-        <div className={styles.details}>
-          <h2 className={styles.title}>{product.title}</h2>
-          <p className={styles.category}>{product.category}</p>
-          <p className={styles.price}>${product.price}</p>
-          <p className={styles.description}>{product.description}</p>
-          
-          <div className={styles.actions}>
-            <button className={styles.addToCartButton}>
-              Add to Cart
-            </button>
+        <div className={styles.modalGrid}>
+          <div className={styles.modalImageContainer}>
+            <img
+              src={product.image}
+              alt={product.title}
+              className={styles.modalImage}
+            />
+          </div>
+
+          <div className={styles.modalInfo}>
+            <h2 className={styles.modalTitle}>{product.title}</h2>
+            <p className={styles.modalCategory}>{product.category}</p>
+            <p className={styles.modalPrice}>${product.price}</p>
+            <p className={styles.modalDescription}>{product.description}</p>
+
+            <div className={styles.actions}>
+              <button className={styles.modalAddToCart}>Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </>
-);
+  );
 };
 
 export default ProductModal;
