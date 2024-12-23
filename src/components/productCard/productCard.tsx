@@ -4,16 +4,8 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import styles from './productCard.module.css';
 import { useCart } from '../../context/cartContext/cartContext.tsx';
+import { Product } from "../../types/product.tsx"
 
-interface Product {
-id: number;
-title: string;
-price: number;
-description: string;
-image: string;
-category: string;
-isWishlisted: boolean;
-}
 
 interface ProductCardProps {
 product: Product;

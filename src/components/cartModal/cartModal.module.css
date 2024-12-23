@@ -8,6 +8,18 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Not visible or interactive initially */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Add the transition */
+  transform: translateY(-10px);
+}
+
+.modalContainer.open {
+  /* Styles when modal is open */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Back to normal position */
 }
 
 .modalOverlay {
@@ -16,7 +28,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
 
@@ -151,4 +163,20 @@
   text-align: center;
   color: #666;
   font-size: 1.1rem;
+}
+
+.clearAllButton {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 2rem;
+  width: 10rem;
+}
+
+.clearAllButton:hover {
+  background-color: #c53030;
 }

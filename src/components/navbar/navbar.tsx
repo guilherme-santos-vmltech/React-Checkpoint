@@ -7,10 +7,14 @@ import WishlistModal from "../wishlistModal/wishlist.tsx";
 import { useCart } from "../../context/cartContext/cartContext.tsx";
 import CartModal from "../cartModal/cartModal.tsx";
 
+
+
 const Navbar: React.FC = () => {
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
+
+
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -29,6 +33,10 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
         </ul>
+    
+        <Link to="/" className={styles.logoContainer}>
+          <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" className={styles.logo} />
+        </Link>
 
         <div className={styles.iconButtons}>
           <button
@@ -37,6 +45,7 @@ const Navbar: React.FC = () => {
             aria-label="Open Wishlist"
           >
             <FontAwesomeIcon icon={faHeart} className={styles.wishlistIcon} />
+            
           </button>
 
           <button

@@ -1,13 +1,11 @@
 .navbar {
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: #1b263b;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .iconButtons {
   display: flex;
@@ -27,7 +25,7 @@
 .navLink {
   position: relative;
   text-decoration: none;
-  color: #333;
+  color: #e0e1dd;
   padding: 0.5rem;
 }
 
@@ -38,13 +36,27 @@
   height: 2px;
   bottom: 0;
   left: 50%;
-  background-color: #00ff48;
+  background-color: #e0e1dd;
   transition: width 0.3s ease;
-  transform: translateX(-50%); /* Add this */
+  transform: translateX(-50%);
 }
 
 .navLink:hover::after {
   width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 3.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logoContainer:hover .logo {
+  transform: scale(1.05);
 }
 
 .cartButton {
@@ -56,7 +68,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #333;
+  color: #e0e1dd;
   transition: color 0.2s ease;
 }
 
@@ -114,7 +126,7 @@
 
 .wishlistIcon {
   font-size: 1.5rem;
-  color: #333;
+  color: #e0e1dd;
   transition: color 0.2s ease;
 }
 
@@ -124,4 +136,21 @@
 
 .wishlistButton:hover .wishlistIcon {
   color: #ff3b30;
+}
+
+.wishlistIconContainer {
+  position: relative; /* Needed for absolute positioning of the badge */
+}
+
+.wishlistBadge {
+  position: absolute;
+  top: -8px; /* Adjust vertical position */
+  right: -8px; /* Adjust horizontal position */
+  background-color: #ff3b30; /* Example color */
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px; /* Adjust padding */
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2; /* Ensure it's above other elements */
 }

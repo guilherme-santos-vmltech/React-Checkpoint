@@ -15,7 +15,7 @@ interface WishlistModalProps {
 const WishlistModal: React.FC<WishlistModalProps> = ({ isOpen, onClose }) => {
   const [wishlistedProducts, setWishlistedProducts] = useState<Product[]>([]);
   const { triggerWishlistUpdate } = useWishlist();
-  const { addToCart } = useCart(); // Add this hook
+  const { addToCart } = useCart();
 
   // Load wishlisted items when modal opens
   useEffect(() => {

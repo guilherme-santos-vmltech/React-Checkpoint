@@ -12,6 +12,28 @@
 
 .description {
   font-size: 1.1rem;
-  color: #666;
+  color: #1b263b;
   line-height: 1.6;
+  display: flex; /* Enable flexbox for the description and button */
+  align-items: center; /* Vertically align items */
+  gap: 1rem; /* Add some space between text and button */
 }
+
+.seeMoreButton {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.1rem 0.3rem;
+  background-color: #415a77; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.seeMoreButton:hover {
+  background-color: #34485f; /* Darker shade on hover */
+}
+
+

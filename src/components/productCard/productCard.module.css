@@ -67,7 +67,7 @@
 .addToCartButton {
   width: 100%;
   padding: 0.75rem;
-  background-color: #000000;
+  background-color: #415a77;
   color: white;
   border: none;
   border-radius: 4px;
@@ -76,7 +76,7 @@
 }
 
 .addToCartButton:hover {
-  background-color: #14903f;
+  background-color: #34485f;
 }
 
 .wishlistButton {
