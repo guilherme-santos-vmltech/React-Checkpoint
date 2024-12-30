@@ -1,0 +1,24 @@
+.bestSellers {
+  /* Styles for the best sellers section */
+  padding: 2rem;
+}
+
+.bestSellersTitle {
+margin-bottom: 2rem;
+}
+
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 3rem;
+  color: red;
+  font-size: 1.3rem;
+}
+/* src/pages/Home/homePage.module.css */

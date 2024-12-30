@@ -3,11 +3,15 @@ import styles from './loadingDots.module.css';
 
 const LoadingDots: React.FC = () => {
 return (
-  <div className={styles.loading}>
+  <div 
+    className={styles.loading} 
+    role="status"
+    aria-label="Loading content"
+  >
     Loading
-    <span className={styles.dot1}>.</span>
-    <span className={styles.dot2}>.</span>
-    <span className={styles.dot3}>.</span>
+    <span className={styles.dot1} aria-hidden="true">.</span>
+    <span className={styles.dot2} aria-hidden="true">.</span>
+    <span className={styles.dot3} aria-hidden="true">.</span>
   </div>
 );
 };

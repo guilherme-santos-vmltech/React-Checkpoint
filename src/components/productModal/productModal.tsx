@@ -27,7 +27,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
   };
 
   return (
-    <div className={styles.modalContainer}>
+    <div className={styles.modalContainer} >
       <div className={styles.modalOverlay} onClick={onClose} />
       <div className={styles.modalContent}>
         <button

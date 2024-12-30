@@ -73,7 +73,8 @@
 }
 
 .cartButton:hover {
-  color: #4299e1;
+  color: #abaca7;
+  transform: scale(1.05);
 }
 
 .cartIconContainer {

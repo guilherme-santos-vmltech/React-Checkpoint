@@ -1,6 +1,7 @@
 {
   "name": "react-checkpoint",
   "version": "0.1.0",
+  "proxy": "https://fakestoreapi.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",

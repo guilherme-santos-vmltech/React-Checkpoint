@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./homePage.module.css";
+import BestSellers from "../../components/bestSellers/bestSellers.tsx";
 
 const Home: React.FC = () => {
   return (
@@ -8,12 +9,15 @@ const Home: React.FC = () => {
       <h1 className={styles.title}>
         Catch the Best Deals Before They Swim Away!
       </h1>
-      <p className={styles.description}>
-        Dive into our products right now
-        <Link to="/products" className={styles.seeMoreButton}>
-          Our Products{" "}
-        </Link>
-      </p>
+      <div className={styles.content}>
+        <p className={styles.description}>
+          Dive into our products right now
+          <Link to="/products" className={styles.seeMoreButton}>
+            Our Products{" "}
+          </Link>
+        </p>
+      </div>
+      <BestSellers />
     </div>
   );
 };

@@ -82,107 +82,107 @@ describe("WishlistModal", () => {
     localStorage.setItem("products", JSON.stringify(mockProducts));
     jest.clearAllMocks();
   });
-
+  
   afterEach(() => {
     jest.restoreAllMocks();
   });
-
-  it("renders nothing when closed", () => {
+  
+  test("renders nothing when closed", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={false} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     expect(screen.queryByText("My Wishlist")).not.toBeInTheDocument();
   });
-
-  it("renders wishlist when open", () => {
+  
+  test("renders wishlist when open", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     expect(screen.getByText("My Wishlist")).toBeInTheDocument();
     expect(screen.getByText("Test Product 1")).toBeInTheDocument();
     expect(screen.getByText("$99.99")).toBeInTheDocument();
   });
-
-  it("shows empty state when no wishlisted items", () => {
+  
+  test("shows empty state when no wishlisted items", () => {
     localStorage.setItem("products", JSON.stringify([]));
-
+  
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     expect(screen.getByText("Your wishlist is empty")).toBeInTheDocument();
   });
-
-  it("calls onClose when clicking close button", () => {
+  
+  test("calls onClose when clicking close button", () => {
     const onClose = jest.fn();
-
+  
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={onClose} />
       </Wrapper>
     );
-
+  
     const closeButton = screen.getByRole('button', { name: 'Close wishlist' });
     fireEvent.click(closeButton);
     expect(onClose).toHaveBeenCalled();
   });
-
-  it("removes item from wishlist", () => {
+  
+  test("removes item from wishlist", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     const removeButton = screen.getAllByRole("button", {
       name: "Remove from wishlist",
     })[0];
     fireEvent.click(removeButton);
-
+  
     const products = JSON.parse(localStorage.getItem("products") || "[]");
     expect(products[0].isWishlisted).toBe(false);
   });
-
-  it("adds item to cart", () => {
+  
+  test("adds item to cart", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     const addToCartButton = screen.getAllByRole("button", {
       name: /add .* to cart/i,
     })[0];
     expect(addToCartButton).toBeInTheDocument();
     fireEvent.click(addToCartButton);
   });
-
-  it("displays correct number of products", () => {
+  
+  test("displays correct number of products", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     const productTitles = screen.getAllByRole("heading", { level: 3 });
     expect(productTitles).toHaveLength(2);
   });
-
-  it("displays correct product information", () => {
+  
+  test("displays correct product information", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     expect(screen.getByText("Test Product 1")).toBeInTheDocument();
     expect(screen.getByText("$99.99")).toBeInTheDocument();
     expect(screen.getByAltText("Test Product 1")).toHaveAttribute(
@@ -190,18 +190,15 @@ describe("WishlistModal", () => {
       "test-image-1.jpg"
     );
   });
-
-  it("handles localStorage errors", () => {
-    // Mock console.error before the test
+  
+  test("handles localStorage errors", () => {
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     
-    // Mock localStorage.getItem
     const mockGetItem = jest.spyOn(Storage.prototype, 'getItem');
     mockGetItem.mockImplementation(() => {
       throw new Error('localStorage error');
     });
     
-    // Clear any existing localStorage data
     localStorage.clear();
     
     render(
@@ -210,27 +207,24 @@ describe("WishlistModal", () => {
       </Wrapper>
     );
     
-    // Verify empty state is shown
     expect(screen.getByText('Your wishlist is empty')).toBeInTheDocument();
     
-    // Clean up
     consoleSpy.mockRestore();
     mockGetItem.mockRestore();
-    });
-
-  it("maintains wishlist state after adding to cart", () => {
+  });
+  
+  test("maintains wishlist state after adding to cart", () => {
     render(
       <Wrapper>
         <WishlistModal isOpen={true} onClose={() => {}} />
       </Wrapper>
     );
-
+  
     const addToCartButton = screen.getAllByRole("button", {
       name: /add .* to cart/i,
     })[0];
     fireEvent.click(addToCartButton);
-
+  
     expect(screen.getByText("Test Product 1")).toBeInTheDocument();
   });
-});
-
+  });
