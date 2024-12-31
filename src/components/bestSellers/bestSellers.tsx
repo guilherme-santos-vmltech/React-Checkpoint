@@ -3,7 +3,7 @@ import styles from './bestSellers.module.css';
 import { Product } from '../../types/product';
 import ProductCard from '../../components/productCard/productCard.tsx';
 import { useWishlist } from '../../context/wishlistContext/wishlistContext.tsx';
-import ProductModal from '../../components/productModal/productModal.tsx'; // Import the modal
+import ProductModal from '../../components/productModal/productModal.tsx'; 
 import LoadingDots from '../../components/loadingDots/loadingDots.tsx'
 
 const BestSellers: React.FC = () => {
@@ -11,7 +11,7 @@ const [bestSellers, setBestSellers] = useState<Product[]>([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState<string | null>(null);
 const { wishlistUpdate, triggerWishlistUpdate } = useWishlist();
-const [selectedProduct, setSelectedProduct] = useState<Product | null>(null); // Add selectedProduct state
+const [selectedProduct, setSelectedProduct] = useState<Product | null>(null); 
 
 
 

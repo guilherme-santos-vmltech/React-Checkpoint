@@ -21,7 +21,7 @@ const {
 if (!isOpen) return null;
 
 return (
-  <div className={`${styles.modalContainer} ${isOpen ? styles.open : ''}`}>
+  <div className={`${styles.modalContainer} ${isOpen}`}>
     <div className={styles.modalOverlay} onClick={onClose} aria-hidden="true" />
     <div className={styles.modalContent} role="dialog">
       <button className={styles.closeButton} onClick={onClose} aria-label="Close cart">

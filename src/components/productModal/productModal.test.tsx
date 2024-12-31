@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import ProductModal from "./productModal";
 import { CartProvider } from "../../context/cartContext/cartContext";
+import { mockProduct } from "../../utils/testUtils";
 
 // Mock FontAwesome
 jest.mock("@fortawesome/react-fontawesome", () => ({
@@ -20,15 +21,7 @@ jest.mock("../../context/cartContext/cartContext", () => ({
   ),
 }));
 
-const mockProduct = {
-  id: 1,
-  title: "Test Product",
-  price: 99.99,
-  description: "Test product description",
-  category: "Test Category",
-  image: "test-image.jpg",
-  isWishlisted: false,
-};
+
 
 describe("ProductModal Component", () => {
   const mockOnClose = jest.fn();

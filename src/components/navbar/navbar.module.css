@@ -1,10 +1,11 @@
 .navbar {
   padding: 1rem;
-  background-color: #1b263b;
+  background-color: var(--color-secondary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 6rem;
 }
 
 .iconButtons {
@@ -20,6 +21,7 @@
   gap: 1rem;
   margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
 
 .navLink {
@@ -73,7 +75,7 @@
 }
 
 .cartButton:hover {
-  color: #abaca7;
+  color: #f7f2dd;
   transform: scale(1.05);
 }
 
@@ -140,18 +142,18 @@
 }
 
 .wishlistIconContainer {
-  position: relative; /* Needed for absolute positioning of the badge */
+  position: relative;
 }
 
 .wishlistBadge {
   position: absolute;
-  top: -8px; /* Adjust vertical position */
-  right: -8px; /* Adjust horizontal position */
-  background-color: #ff3b30; /* Example color */
+  top: -8px;
+  right: -8px;
+  background-color: #ff3b30;
   color: white;
   border-radius: 50%;
-  padding: 2px 6px; /* Adjust padding */
+  padding: 2px 6px;
   font-size: 0.75rem;
   font-weight: bold;
-  z-index: 2; /* Ensure it's above other elements */
+  z-index: 2;
 }

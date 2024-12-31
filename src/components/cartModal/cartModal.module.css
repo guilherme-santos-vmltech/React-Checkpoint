@@ -8,18 +8,12 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-
-  opacity: 0; 
-  visibility: hidden; 
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; 
-  transform: translateY(-10px);
 }
 
 .modalContainer.open {
-  /* Styles when modal is open */
   opacity: 1;
   visibility: visible;
-  transform: translateY(0); /* Back to normal position */
+  transform: translateY();
 }
 
 .modalOverlay {
@@ -56,15 +50,22 @@
   transition: color 0.2s ease;
 }
 
+.closeButton:hover {
+  transform: scale(1.05);
+  color: #000000;
+}
+
 .title {
   margin-bottom: 2rem;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .cartItems {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-size: 1rem;
 }
 
 .cartItem {
@@ -96,7 +97,7 @@
 }
 
 .itemPrice {
-  color: #2c5282;
+  color: var(--color-tertiary);
   font-weight: bold;
   margin: 0;
 }
@@ -152,7 +153,7 @@
 .checkoutButton {
   width: 100%;
   padding: 0.75rem;
-  background-color: #415a77;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   border-radius: 4px;
@@ -161,7 +162,7 @@
 }
 
 .checkoutButton:hover {
-  background-color: #34485f;
+  background-color: var(--color-primary-hover);
 }
 
 .emptyCart {
@@ -171,8 +172,11 @@
 }
 
 .clearAllButton {
+  display: flex;
+  justify-content: center;
+  justify-self: end;
   background-color: #c10909;
-  color: #F5F5F5;
+  color: #f5f5f5;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;

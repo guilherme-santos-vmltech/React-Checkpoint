@@ -10,7 +10,7 @@ const Home: React.FC = () => {
         Catch the Best Deals Before They Swim Away!
       </h1>
       <div className={styles.content}>
-        <p className={styles.description}>
+        <p className={styles.secondaryHeader}>
           Dive into our products right now
           <Link to="/products" className={styles.seeMoreButton}>
             Our Products{" "}

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -35,10 +34,10 @@ const WishlistModal: React.FC<WishlistModalProps> = ({ isOpen, onClose }) => {
         setWishlistedProducts(wishlisted);
       }
     } catch (error) {
-      console.error('Error loading wishlist items:', error);
+      console.error("Error loading wishlist items:", error);
       setWishlistedProducts([]); // Set empty array on error
     }
-    };
+  };
 
   const removeFromWishlist = (productId: number) => {
     // Update local state immediately
@@ -60,7 +59,6 @@ const WishlistModal: React.FC<WishlistModalProps> = ({ isOpen, onClose }) => {
     triggerWishlistUpdate();
   };
 
-  // Add this handler
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {
     e.stopPropagation();
     addToCart(product);
@@ -74,7 +72,11 @@ const WishlistModal: React.FC<WishlistModalProps> = ({ isOpen, onClose }) => {
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
           <h2 className={styles.title}>My Wishlist </h2>
-          <button className={styles.closeButton} onClick={onClose} aria-label="Close wishlist">
+          <button
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close wishlist"
+          >
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
@@ -104,6 +106,9 @@ const WishlistModal: React.FC<WishlistModalProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div className={styles.productInfo}>
                     <h3 className={styles.productTitle}>{product.title}</h3>
+                    <p className={styles.productDescription}>
+                      {product.description.slice(0, 100)}...
+                    </p>
                     <p className={styles.productPrice}>${product.price}</p>
                     <button
                       className={styles.addToCartButton}

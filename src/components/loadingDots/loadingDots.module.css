@@ -2,12 +2,11 @@
   text-align: center;
   padding: 2rem;
   font-size: 1.5rem;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  color: #415a77;
+  color: var(--color-primary);
 }
 
 .dot1,
@@ -15,7 +14,7 @@
 .dot3 {
   display: inline-block;
   animation: jump 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
-  color: #415a77;
+  color: var(--color-primary);
 }
 
 .dot2 {

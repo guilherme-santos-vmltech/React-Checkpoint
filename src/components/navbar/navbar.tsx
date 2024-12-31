@@ -91,7 +91,9 @@ const Navbar: React.FC = () => {
                   role="status"
                   aria-live="polite"
                   aria-label="Cart is empty"
-                ></span>
+                >
+                  
+                </span>
               )}
             </div>
           </button>

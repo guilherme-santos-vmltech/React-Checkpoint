@@ -4,12 +4,8 @@
   box-sizing: border-box;
 }
 
-hmtl {
-    font-size: 62.5%;
-}
-
 body {
-font-family: -apple-system, sans-serif;
-
-background-color: #e0e1dd;
+  font-family: -apple-system, sans-serif;
+  font-size: 62.5%;
+  background-color: #e0e1dd;
 }

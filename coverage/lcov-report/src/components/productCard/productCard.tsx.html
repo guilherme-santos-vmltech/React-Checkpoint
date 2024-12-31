@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -147,10 +147,7 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,31 +163,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,7 +194,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,95 +237,92 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import styles from './productCard.module.css';
 import { useCart } from '../../context/cartContext/cartContext.tsx';
+import { Product } from "../../types/product.tsx"
 &nbsp;
-interface Product {
-id: number;
-title: string;
-price: number;
-description: string;
-image: string;
-category: string;
-isWishlisted: boolean;
-}
 &nbsp;
 interface ProductCardProps {
 product: Product;
 index: number;
 onProductClick: (product: Product) =&gt; void;
 onToggleWishlist: (e: React.MouseEvent, productId: number) =&gt; void;
+wishlistUpdate: number;
 }
-&nbsp;
-const ProductCard: React.FC&lt;ProductCardProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
-product,
-index,
-onProductClick,
-onToggleWishlist,
-}) =&gt; {
-const { addToCart } = <span class="cstat-no" title="statement not covered" >useCart();</span> // Add this hook
-&nbsp;
-const handleAddToCart = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>: React.MouseEvent) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  e.stopPropagation(); </span>// Prevent modal from opening
-<span class="cstat-no" title="statement not covered" >  addToCart(product); </span>// Add product to cart
-};
-&nbsp;
-<span class="cstat-no" title="statement not covered" >return (</span>
-  &lt;div
-    className={styles.productCard}
-    onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onProductClick(product)}</span>
-  &gt;
-    &lt;div className={styles.imageContainer}&gt;
-      &lt;img
-        src={product.image}
-        alt={product.title}
-        className={styles.productImage}
-        loading={index === 0 ? "eager" : "lazy"}
-        width="300"
-        height="300"
-      /&gt;
-      &lt;button
-        className={styles.wishlistButton}
-        onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >onToggleWishlist(e, product.id)}</span>
-        aria-label={
-          product.isWishlisted
-            ? "Remove from wishlist"
-            : "Add to wishlist"
-        }
-      &gt;
-        &lt;FontAwesomeIcon
-          icon={product.isWishlisted ? faHeartSolid : faHeartRegular}
-          className={`${styles.heartIcon} ${
-            product.isWishlisted ? styles.wishlisted : ""
-          }`}
+const ProductCard: React.FC&lt;ProductCardProps&gt; = ({
+  product,
+  index,
+  onProductClick,
+  onToggleWishlist,
+  }) =&gt; {
+  const { addToCart } = useCart();
+  
+  const handleAddToCart = (e: React.MouseEvent) =&gt; {
+    e.stopPropagation();
+    addToCart(product);
+    
+  };
+  
+  return (
+    &lt;div 
+      className={styles.productCard}
+      onClick={() =&gt; onProductClick(product)}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${product.title}`}
+    &gt;
+      &lt;div className={styles.imageContainer}&gt;
+        &lt;img
+          src={product.image}
+          alt={product.title}
+          className={styles.productImage}
+          loading={index === 0 ? "eager" : "lazy"}
+          width="300"
+          height="300"
         /&gt;
-      &lt;/button&gt;
+        &lt;button
+          className={styles.wishlistButton}
+          onClick={(e) =&gt; onToggleWishlist(e, product.id)}
+          aria-label={
+            product.isWishlisted
+              ? "Remove from wishlist"
+              : "Add to wishlist"
+          }
+        &gt;
+          &lt;FontAwesomeIcon
+            icon={product.isWishlisted ? faHeartSolid : faHeartRegular}
+            className={`${styles.heartIcon} ${
+              product.isWishlisted ? styles.wishlisted : ""
+            }`}
+            aria-hidden="true"
+          /&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div className={styles.productInfo}&gt;
+        &lt;h2 className={styles.productTitle}&gt;{product.title}&lt;/h2&gt;
+        &lt;p className={styles.productCategory}&gt;{product.category}&lt;/p&gt;
+        &lt;p className={styles.productPrice}&gt;${product.price}&lt;/p&gt;
+        &lt;p className={styles.productDescription}&gt;
+          {product.description.slice(0, 100)}...
+        &lt;/p&gt;
+        &lt;button
+          className={styles.addToCartButton}
+          onClick={handleAddToCart}
+          aria-label={`Add ${product.title} to cart`}
+        &gt;
+          Add to Cart
+        &lt;/button&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div className={styles.productInfo}&gt;
-      &lt;h2 className={styles.productTitle}&gt;{product.title}&lt;/h2&gt;
-      &lt;p className={styles.productCategory}&gt;{product.category}&lt;/p&gt;
-      &lt;p className={styles.productPrice}&gt;${product.price}&lt;/p&gt;
-      &lt;p className={styles.productDescription}&gt;
-        {product.description.slice(0, 100)}...
-      &lt;/p&gt;
-      &lt;button
-        className={styles.addToCartButton}
-        onClick={handleAddToCart} // Update this
-        aria-label={`Add ${product.title} to cart`}
-      &gt;
-        Add to Cart
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);
-};
+  );
+  };
 &nbsp;
-export default ProductCard;</pre></td></tr></table></pre>
+  export default ProductCard</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-20T17:02:11.651Z
+                at 2024-12-31T13:26:24.005Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

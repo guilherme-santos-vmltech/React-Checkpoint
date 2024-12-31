@@ -3,8 +3,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import BestSellers from "./bestSellers";
 import { WishlistProvider } from "../../context/wishlistContext/wishlistContext";
+import { mockProducts } from "../../utils/testUtils";
 
-// Mock the ProductCard component
 jest.mock("../../components/productCard/productCard.tsx", () => {
   return function MockProductCard({
     product,
@@ -43,35 +43,7 @@ jest.mock("../../components/loadingDots/loadingDots.tsx", () => {
   };
 });
 
-const mockProducts = [
-  {
-    id: 1,
-    title: "Product 1",
-    price: 99.99,
-    description: "Description 1",
-    image: "image1.jpg",
-    category: "category1",
-    isWishlisted: false,
-  },
-  {
-    id: 2,
-    title: "Product 2",
-    price: 149.99,
-    description: "Description 2",
-    image: "image2.jpg",
-    category: "category2",
-    isWishlisted: true,
-  },
-  {
-    id: 3,
-    title: "Product 3",
-    price: 199.99,
-    description: "Description 3",
-    image: "image3.jpg",
-    category: "category3",
-    isWishlisted: false,
-  },
-];
+
 
 // Mock fetch
 global.fetch = jest.fn();

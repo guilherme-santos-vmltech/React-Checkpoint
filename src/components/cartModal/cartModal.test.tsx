@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { CartProvider, useCart } from '../../context/cartContext/cartContext';
 import CartModal from './cartModal';
-import { Product } from '../../types/product';
+import { mockProduct } from "../../utils/testUtils";
 
 // Mock the useCart hook
 jest.mock('../../context/cartContext/cartContext', () => ({
@@ -11,15 +11,7 @@ useCart: jest.fn(),
 CartProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-const mockProduct: Product = {
-id: 1,
-title: 'Test Product',
-price: 10,
-description: 'Test description',
-category: 'Test category',
-image: 'test-image.jpg',
-isWishlisted: false,
-};
+
 
 const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 <CartProvider>{children}</CartProvider>
@@ -27,7 +19,6 @@ const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 describe('CartModal', () => {
 beforeEach(() => {
-  // Default mock implementation
   (useCart as jest.Mock).mockReturnValue({
     cartItems: [],
     addToCart: jest.fn(),

@@ -11,7 +11,6 @@ test('renders loading text', () => {
 
 test('renders with correct accessibility role', () => {
   render(<LoadingDots />);
-  // Add aria-label to the component first
   expect(screen.getByRole('status')).toBeInTheDocument();
 });
 });

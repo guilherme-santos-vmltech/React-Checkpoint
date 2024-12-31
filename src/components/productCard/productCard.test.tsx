@@ -3,24 +3,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import ProductCard from "./productCard";
 import { CartProvider } from "../../context/cartContext/cartContext";
-import { Product } from "../../types/product";
+import { mockProduct } from "../../utils/testUtils";
 
 // Mock FontAwesome
 jest.mock("@fortawesome/react-fontawesome", () => ({
   FontAwesomeIcon: () => <span>icon</span>,
 }));
-
-// Mock product data
-const mockProduct: Product = {
-  id: 1,
-  title: "Test Product",
-  price: 99.99,
-  description:
-    "This is a test product description that is long enough to be truncated",
-  category: "Test Category",
-  image: "test-image.jpg",
-  isWishlisted: false,
-};
 
 // Mock functions
 const mockOnProductClick = jest.fn();

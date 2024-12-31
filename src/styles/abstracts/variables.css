@@ -1,0 +1,16 @@
+:root {
+  /* Colors */
+  --color-primary: #415a77;
+  --color-secondary: #1b263b;
+  --color-tertiary: #2c5282;
+  --color-primary-hover: #34485f;
+
+  /* Text colors */
+  --text-color-primary: #333;
+  --text-color-secondary: #ffffff;
+  --text-color-tertiary: #666;
+
+  /* Accent colors */
+  --error-color: #e53e3e;
+  --heart-color: red;
+}

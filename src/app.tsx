@@ -4,10 +4,9 @@ import Home from "./pages/homePage/homePage.tsx";
 import ProductsPage from "./pages/productsPage/productsPage.tsx";
 import Layout from "./components/layout/layout.tsx";
 import { WishlistProvider } from "./context/wishlistContext/wishlistContext.tsx";
-import { CartProvider } from './context/cartContext/cartContext.tsx';
-import './styles/global.css';
-
-
+import { CartProvider } from "./context/cartContext/cartContext.tsx";
+import "./styles/global.css";
+import "./styles/abstracts/variables.css";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
         <Router>
           <Layout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="" element={<Home />} />
               <Route path="/products" element={<ProductsPage />} />
             </Routes>
           </Layout>
