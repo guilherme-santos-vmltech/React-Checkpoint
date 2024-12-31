@@ -1,6 +1,28 @@
-<h1 align="center">React Project React Project</h1>
-<h3 align="center">A modern shopping gallery built with React and TypeScript. Browse products, add them to your cart, and manage your wishlist.</h3>
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-</p>
+# React Project React Project
+
+#### A modern shopping gallery built with React and TypeScript. Browse products, add them to your cart, and manage your wishlist.
+
+## Quick start 
+
+```bash
+1. Install dependencies
+npm install
+
+2. Run development server
+npm start
+
+3. Run tests 
+npm test
+```
+
+## Core Features 
+
+- Browse product catalog
+- Add/remove from cart
+- Wishlist functionality
+- Product details modal
+
+## API 
+
+Uses [Fake Store API](https://fakestoreapi.com/) for product data.

@@ -4,7 +4,6 @@ import "@testing-library/jest-dom";
 import ProductModal from "./productModal";
 import { CartProvider } from "../../context/cartContext/cartContext";
 import { mockProduct } from "../../utils/testUtils";
-
 // Mock FontAwesome
 jest.mock("@fortawesome/react-fontawesome", () => ({
   FontAwesomeIcon: () => <span>icon</span>,
