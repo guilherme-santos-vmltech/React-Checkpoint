@@ -5,14 +5,19 @@
 
 ## Quick start 
 
-```bash
+
 1. Install dependencies
+```bash
 npm install
+```
 
 2. Run development server
+```bash
 npm start
+````
 
 3. Run tests 
+```bash
 npm test
 ```
 
